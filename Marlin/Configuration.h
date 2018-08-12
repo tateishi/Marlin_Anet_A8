@@ -309,12 +309,8 @@
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
-<<<<<<< HEAD
 #define TEMP_SENSOR_BED 5
-=======
-#define TEMP_SENSOR_BED 0
 #define TEMP_SENSOR_CHAMBER 0
->>>>>>> upstream/bugfix-1.1.x
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
 #define DUMMY_THERMISTOR_998_VALUE 25
@@ -378,15 +374,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-<<<<<<< HEAD
-  //#define  DEFAULT_Kp 21.0
-  //#define  DEFAULT_Ki 1.25
-  //#define  DEFAULT_Kd 86.0
-=======
-  #define DEFAULT_Kp 22.2
-  #define DEFAULT_Ki 1.08
-  #define DEFAULT_Kd 114
->>>>>>> upstream/bugfix-1.1.x
+  //#define DEFAULT_Kp 21.0
+  //#define DEFAULT_Ki 1.25
+  //#define DEFAULT_Kd 86.0
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -400,9 +390,9 @@
 
   // ANET A8 Standard Extruder at 210 Degree Celsius and 100% Fan
   //(measured after M106 S255 with M303 E0 S210 C8)
-  #define  DEFAULT_Kp 21.0
-  #define  DEFAULT_Ki 1.25
-  #define  DEFAULT_Kd 86.0
+  #define DEFAULT_Kp 21.0
+  #define DEFAULT_Ki 1.25
+  #define DEFAULT_Kd 86.0
 
 #endif // PIDTEMP
 
@@ -545,29 +535,6 @@
 #define Y_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING true  // set to true to invert the logic of the probe.
-
-/**
- * Specify Stepper Driver types
- * The options are used to determine driver pulse timings as well as more advanced functionality.
- * Stepper timing options can be overridden in Configuration_adv.h
- *
- * Options: A4988, DRV8825, LV8729, L6470, TB6560, TB6600, TMC2100,
- *          TMC2130, TMC2130_STANDALONE, TMC2208, TMC2208_STANDALONE,
- *          TMC26X,  TMC26X_STANDALONE,  TMC2660, TMC2660_STANDALONE,
- *          TMC5130, TMC5130_STANDALONE
- * :['A4988', 'DRV8825', 'LV8729', 'L6470', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE']
- */
-#define X_DRIVER_TYPE  A4988
-#define Y_DRIVER_TYPE  A4988
-#define Z_DRIVER_TYPE  A4988
-#define X2_DRIVER_TYPE A4988
-#define Y2_DRIVER_TYPE A4988
-#define Z2_DRIVER_TYPE A4988
-#define E0_DRIVER_TYPE A4988
-#define E1_DRIVER_TYPE A4988
-#define E2_DRIVER_TYPE A4988
-#define E3_DRIVER_TYPE A4988
-#define E4_DRIVER_TYPE A4988
 
 /**
  * Specify Stepper Driver types
@@ -1037,11 +1004,7 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-<<<<<<< HEAD
-  //#define G26_MESH_VALIDATION   // Enable G26 mesh validation
-=======
   //#define G26_MESH_VALIDATION
->>>>>>> upstream/bugfix-1.1.x
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
@@ -1058,20 +1021,10 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-<<<<<<< HEAD
-  #define LEFT_PROBE_BED_POSITION 15
-  #define RIGHT_PROBE_BED_POSITION 190
-  #define FRONT_PROBE_BED_POSITION 15
-  #define BACK_PROBE_BED_POSITION 170
-
-  // The Z probe minimum outer margin (to validate G29 parameters).
-  #define MIN_PROBE_EDGE 10
-=======
   //#define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
   //#define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
   //#define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
   //#define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
->>>>>>> upstream/bugfix-1.1.x
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1094,20 +1047,6 @@
 
   #endif
 
-<<<<<<< HEAD
-#elif ENABLED(AUTO_BED_LEVELING_3POINT)
-
-  // 3 arbitrary points to probe.
-  // A simple cross-product is used to estimate the plane of the bed.
-  #define ABL_PROBE_PT_1_X 20
-  #define ABL_PROBE_PT_1_Y 160
-  #define ABL_PROBE_PT_2_X 20
-  #define ABL_PROBE_PT_2_Y 10
-  #define ABL_PROBE_PT_3_X 180
-  #define ABL_PROBE_PT_3_Y 10
-
-=======
->>>>>>> upstream/bugfix-1.1.x
 #elif ENABLED(AUTO_BED_LEVELING_UBL)
 
   //===========================================================================
@@ -1145,12 +1084,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  //#define PROBE_PT_1_X 15
-  //#define PROBE_PT_1_Y 180
-  //#define PROBE_PT_2_X 15
-  //#define PROBE_PT_2_Y 20
-  //#define PROBE_PT_3_X 170
-  //#define PROBE_PT_3_Y 20
+  #define PROBE_PT_1_X 20
+  #define PROBE_PT_1_Y 160
+  #define PROBE_PT_2_X 20
+  #define PROBE_PT_2_Y 10
+  #define PROBE_PT_3_X 180
+  #define PROBE_PT_3_Y 10
 #endif
 
 /**
@@ -1575,14 +1514,11 @@
 //
 //#define LCD_FEEDBACK_FREQUENCY_DURATION_MS 2
 //#define LCD_FEEDBACK_FREQUENCY_HZ 5000
-<<<<<<< HEAD
-=======
 
 //=============================================================================
 //======================== LCD / Controller Selection =========================
 //========================   (Character-based LCDs)   =========================
 //=============================================================================
->>>>>>> upstream/bugfix-1.1.x
 
 //
 // RepRapDiscount Smart Controller.
@@ -1617,33 +1553,6 @@
 //#define G3D_PANEL
 
 //
-<<<<<<< HEAD
-// RepRapDiscount FULL GRAPHIC Smart Controller
-// http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
-//
-// Note: Details on connecting to the Anet V1.0 controller are in the file pins_ANET_10.h
-//
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
-
-//
-// MakerLab Mini Panel with graphic
-// controller and SD support - http://reprap.org/wiki/Mini_panel
-//
-//#define MINIPANEL
-
-//
-// RepRapWorld REPRAPWORLD_KEYPAD v1.1
-// http://reprapworld.com/?products_details&products_id=202&cPath=1591_1626
-//
-// REPRAPWORLD_KEYPAD_MOVE_STEP sets how much should the robot move when a key
-// is pressed, a value of 10.0 means 10mm per click.
-//
-//#define REPRAPWORLD_KEYPAD
-//#define REPRAPWORLD_KEYPAD_MOVE_STEP 1.0
-
-//
-=======
->>>>>>> upstream/bugfix-1.1.x
 // RigidBot Panel V1.0
 // http://www.inventapart.com/
 //
@@ -1744,6 +1653,8 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
+// Note: Details on connecting to the Anet V1.0 controller are in the file pins_ANET_10.h
+//
 //#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
@@ -1836,8 +1747,6 @@
 //#define CR10_STOCKDISPLAY
 
 //
-<<<<<<< HEAD
-=======
 // ANET and Tronxy Graphical Controller
 //
 //#define ANET_FULL_GRAPHICS_LCD  // Anet 128x64 full graphics lcd with rotary encoder as used on Anet A6
@@ -1845,7 +1754,6 @@
                                   // different pins/wiring (see pins_ANET_10.h).
 
 //
->>>>>>> upstream/bugfix-1.1.x
 // MKS OLED 1.3" 128 × 64 FULL GRAPHICS CONTROLLER
 // http://reprap.org/wiki/MKS_12864OLED
 //
